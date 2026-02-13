@@ -4,7 +4,7 @@ I have successfully:
 1.  Configured your Git user: `lucsg13` / `lucasgomessoares13@gmail.com`
 2.  Initialized the repository locally.
 3.  Committed all your code.
-4.  Added the remote link: `https://github.com/lucsg13/portfolio.git`
+4.  Added the remote link: `https://github.com/lucsg13/teste-motion-website.git`
 
 ## 🚨 Action Required: Create the Repo
 
