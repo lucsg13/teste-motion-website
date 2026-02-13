@@ -22,7 +22,7 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section className="relative z-20 bg-[#121212] py-24 px-6 md:px-12">
+        <section id="work" className="relative z-20 bg-[#121212] py-16 md:py-24 px-4 md:px-12">
             <div className="max-w-7xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

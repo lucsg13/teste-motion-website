@@ -28,7 +28,7 @@ const companies = [
 
 export default function About() {
     return (
-        <section id="about" className="relative z-20 bg-[#121212] py-24 px-6 md:px-12 text-white overflow-hidden">
+        <section id="about" className="relative z-20 bg-[#121212] py-16 md:py-24 px-4 md:px-12 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                 {/* Story Column */}
                 <motion.div

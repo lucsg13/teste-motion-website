@@ -24,12 +24,12 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                 {/* Section 1 */}
                 <motion.div
                     style={{ y: y1, opacity: opacity1 }}
-                    className="absolute right-10 md:right-20 top-1/2 -translate-y-1/2 text-right"
+                    className="absolute right-6 md:right-20 top-1/2 -translate-y-1/2 text-right"
                 >
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-white">
+                    <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white">
                         Soares
                     </h1>
-                    <p className="text-xl md:text-2xl mt-4 text-blue-500 text-center">
+                    <p className="text-lg md:text-2xl mt-2 md:mt-4 text-blue-500 text-center">
                         Desenvolvedor Web
                     </p>
                 </motion.div>
@@ -37,9 +37,9 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                 {/* Section 2 */}
                 <motion.div
                     style={{ y: y2, opacity: opacity2 }}
-                    className="absolute left-10 md:left-20 max-w-lg"
+                    className="absolute left-6 md:left-20 max-w-[80vw] md:max-w-lg"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold leading-tight text-white/90">
+                    <h2 className="text-4xl md:text-7xl font-bold leading-tight text-white/90">
                         Eu crio <br />
                         <span className="text-green-600">experiências digitais.</span>
                     </h2>
@@ -48,9 +48,9 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                 {/* Section 3 */}
                 <motion.div
                     style={{ y: y3, opacity: opacity3 }}
-                    className="absolute right-10 md:right-20 text-right max-w-lg"
+                    className="absolute right-6 md:right-20 text-right max-w-[80vw] md:max-w-lg"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold leading-tight text-white/90">
+                    <h2 className="text-4xl md:text-7xl font-bold leading-tight text-white/90">
                         Unindo design <br />
                         & <span className="text-purple-500">engenharia.</span>
                     </h2>
