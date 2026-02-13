@@ -1,26 +1,26 @@
-# Connecting with GitHub
+# Final Steps to Connect to GitHub
 
-Since Git is not in your system PATH, you might need to use GitHub Desktop or configure Git manually. However, try running these commands in your terminal if you have Git installed:
+I have successfully:
+1.  Configured your Git user: `lucsg13` / `lucasgomessoares13@gmail.com`
+2.  Initialized the repository locally.
+3.  Committed all your code.
+4.  Added the remote link: `https://github.com/lucsg13/portfolio.git`
 
-1.  **Initialize Git:**
-    ```bash
-    git init
-    git add .
-    git commit -m "Initial commit"
-    ```
+## 🚨 Action Required: Create the Repo
 
-2.  **Create a Repository on GitHub:**
-    - Go to [github.com/new](https://github.com/new)
-    - Name your repository (e.g., `portfolio-scrolly`)
-    - Click "Create repository"
+Because the repository doesn't exist on GitHub yet, the push failed. You need to create it manually:
 
-3.  **Link and Push:**
-    - Copy the commands from the "...or push an existing repository from the command line" section.
-    - Run them in your project folder:
-    ```bash
-    git remote add origin https://github.com/YOUR_USERNAME/portfolio-scrolly.git
-    git branch -M main
-    git push -u origin main
-    ```
+1.  Go to: **[https://github.com/new](https://github.com/new)**
+2.  **Repository name:** Enter exactly `portfolio`
+3.  **Visibility:** Public or Private (your choice)
+4.  Click **Create repository**
 
-**Note:** If `git` command is not found, please install Git from [git-scm.com](https://git-scm.com/downloads) and restart your terminal.
+## 🚀 Push the Code
+
+Once created, run this single command in your terminal VS Code:
+
+```powershell
+& "C:\Program Files\Git\bin\git.exe" push -u origin main
+```
+
+*(If that command fails due to authentication, try using GitHub Desktop or VS Code's Source Control tab to publish the branch.)*
