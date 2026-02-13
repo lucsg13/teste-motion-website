@@ -1,26 +1,13 @@
-# Final Steps to Connect to GitHub
+# Connecting with GitHub Desktop
 
-I have successfully:
-1.  Configured your Git user: `lucsg13` / `lucasgomessoares13@gmail.com`
-2.  Initialized the repository locally.
-3.  Committed all your code.
-4.  Added the remote link: `https://github.com/lucsg13/teste-motion-website.git`
+Since you have GitHub Desktop installed, follow these easy steps to upload your project:
 
-## 🚨 Action Required: Create the Repo
+1.  **Open GitHub Desktop.**
+2.  Go to **File** > **Add Local Repository...**
+3.  Click **Choose...** and select your project folder:
+    `C:\Users\lucas\OneDrive\Documentos\TEST ANIMATED SITE`
+4.  Click **Add Repository**.
+5.  You should see "Current Repository: TEST ANIMATED SITE" (or similar) in the top left.
+6.  Click **Push origin** (or **Publish branch**) in the top toolbar to upload your code to `teste-motion-website`.
 
-Because the repository doesn't exist on GitHub yet, the push failed. You need to create it manually:
-
-1.  Go to: **[https://github.com/new](https://github.com/new)**
-2.  **Repository name:** Enter exactly `portfolio`
-3.  **Visibility:** Public or Private (your choice)
-4.  Click **Create repository**
-
-## 🚀 Push the Code
-
-Once created, run this single command in your terminal VS Code:
-
-```powershell
-& "C:\Program Files\Git\bin\git.exe" push -u origin main
-```
-
-*(If that command fails due to authentication, try using GitHub Desktop or VS Code's Source Control tab to publish the branch.)*
+> **Note:** I have already configured the remote link to `https://github.com/lucsg13/teste-motion-website.git` for you locally. If GitHub Desktop asks to initialize, just select "Add Local Repository" as valid git data is already there.
