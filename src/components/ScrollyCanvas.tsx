@@ -53,11 +53,46 @@ export default function ScrollyCanvas() {
         const img = images[Math.round(index)];
         if (!img) return;
 
-        // Responsive Canvas Logic (Object-fit: cover)
+        // Responsive Canvas Logic
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+        const isMobile = window.innerWidth < 768;
+
+        let scale;
+        if (isMobile) {
+            // For mobile, we prioritize width to prevent extreme zoom on portrait
+            // forcing a "contain" style approach or a hybrid
+            const scaleWidth = canvas.width / img.width;
+            const scaleHeight = canvas.height / img.height;
+
+            // Use the larger dimension but limit the zoom. 
+            // If we use strictly MAX, it zooms in huge on portrait.
+            // If we use MIN, it fits entirely but leaves bars.
+            // Let's try a hybrid: enough to cover width plus a bit extra, but not necessarily full height cover if it cuts too much.
+            // Actually, the user asked to "diminuir a imagem para caber". 
+            // Simple "contain" logic (Math.min) ensures it fits.
+            scale = Math.min(scaleWidth, scaleHeight) * 1.2; // 1.2x to fill a bit more but keep it smaller than full cover
+
+            // Alternative: If portrait (H > W), standard cover (H/imgH) is too big.
+            // Let's try to match height if it's acceptable, or width.
+            // If I use Math.max, I get huge zoom. 
+            // Let's rely on a slightly relaxed cover or contain.
+            // Let's try forcing width fit * 1.5 in portrait?
+
+            // Let's go with a cleaner approach: 
+            // If mobile, we use a hybrid scale that doesn't zoom as much.
+            scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+
+            // Adjust: if the calculated scale results in an image much larger than canvas, reduce it.
+            if (scale * img.width > canvas.width * 2) {
+                scale = (canvas.width / img.width) * 1.5; // Cap zoom
+            }
+        } else {
+            // Desktop: standard cover
+            scale = Math.max(canvas.width / img.width, canvas.height / img.height);
+        }
+
         const x = (canvas.width / 2) - (img.width / 2) * scale;
         const y = (canvas.height / 2) - (img.height / 2) * scale;
 
