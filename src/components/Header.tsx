@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 const navItems = [
     { name: "Início", href: "#" },
@@ -13,9 +14,9 @@ const navItems = [
 export default function Header() {
     const { scrollY } = useScroll();
     const [hidden, setHidden] = useState(true);
+    const lenis = useLenis();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        // Show header if scrolled past 100vh (hero section)
         if (latest > window.innerHeight) {
             setHidden(false);
         } else {
@@ -27,7 +28,7 @@ export default function Header() {
         e.preventDefault();
 
         if (href === "#") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            lenis?.scrollTo(0, { duration: 1.0 });
             return;
         }
 
@@ -35,14 +36,7 @@ export default function Header() {
         const elem = document.getElementById(targetId);
 
         if (elem) {
-            const headerOffset = 80; // Account for fixed header
-            const elementPosition = elem.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+            lenis?.scrollTo(elem, { offset: -80, duration: 1.0 });
         }
     };
 
