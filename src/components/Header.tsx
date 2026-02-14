@@ -23,6 +23,22 @@ export default function Header() {
         }
     });
 
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+
+        if (href === "#") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
+
+        const targetId = href.replace("#", "");
+        const elem = document.getElementById(targetId);
+
+        if (elem) {
+            elem.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <motion.header
             variants={{
@@ -39,6 +55,7 @@ export default function Header() {
                     <a
                         key={item.name}
                         href={item.href}
+                        onClick={(e) => handleScroll(e, item.href)}
                         className={`
               relative px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-medium transition-colors whitespace-nowrap
               ${index === 0 ? "hidden md:block text-white bg-white/10" : "text-white/60 hover:text-white hover:bg-white/5"}
