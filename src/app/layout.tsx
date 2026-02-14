@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   title: "Web Designer Soares",
   description: "Desenvolvimento profissional de sites modernos e premium.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png" },
+      { url: "/icon.png", sizes: "any" },
+    ],
+    apple: "/favicon.png",
   },
 };
 
