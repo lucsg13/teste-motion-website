@@ -15,16 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Web Designer Soares",
   description: "Desenvolvimento profissional de sites modernos e premium.",
-  icons: {
-    icon: [
-      { url: "/favicon.png" },
-      { url: "/icon.png", sizes: "any" },
-    ],
-    apple: "/favicon.png",
-  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -33,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
