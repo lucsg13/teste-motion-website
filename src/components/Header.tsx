@@ -37,7 +37,7 @@ export default function Header() {
         if (elem) {
             const headerOffset = 80; // Account for fixed header
             const elementPosition = elem.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
             window.scrollTo({
                 top: offsetPosition,
