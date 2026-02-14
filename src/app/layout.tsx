@@ -15,11 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Web Designer Soares",
   description: "Desenvolvimento profissional de sites modernos e premium.",
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
