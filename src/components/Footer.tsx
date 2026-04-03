@@ -14,10 +14,10 @@ export default function Footer() {
                 </p>
 
                 <a
-                    href="mailto:contato@soares.dev"
+                    href="mailto:soareswebdev@gmail.com"
                     className="text-white hover:text-blue-400 transition-colors text-lg font-medium"
                 >
-                    contato@soares.dev
+                    soareswebdev@gmail.com
                 </a>
 
                 <div className="flex gap-6 mt-4">
