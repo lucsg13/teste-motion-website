@@ -1,16 +1,19 @@
 "use client";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export default function Footer() {
+    const { t } = useLanguage();
+
     return (
         <footer id="contact" className="bg-[#0a0a0a] py-12 px-6 border-t border-white/5 text-center">
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
                 <h2 className="text-2xl font-bold text-white tracking-tight">
-                    Vamos construir algo incrível juntos.
+                    {t("footer.title")}
                 </h2>
 
                 <p className="text-gray-400 max-w-md">
-                    Estou sempre aberto a novos desafios e parcerias.
-                    Entre em contato para discutirmos seu próximo projeto.
+                    {t("footer.desc")}
                 </p>
 
                 <a
@@ -21,13 +24,13 @@ export default function Footer() {
                 </a>
 
                 <div className="flex gap-6 mt-4">
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors">LinkedIn</a>
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors">GitHub</a>
-                    <a href="#" className="text-gray-500 hover:text-white transition-colors">Twitter</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-500 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-gray-500 hover:text-white transition-colors">GitHub</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-500 hover:text-white transition-colors">Twitter</a>
                 </div>
 
                 <p className="text-xs text-gray-600 mt-8">
-                    &copy; {new Date().getFullYear()} Soares. Todos os direitos reservados.
+                    &copy; {new Date().getFullYear()} Soares. {t("footer.rights")}
                 </p>
             </div>
         </footer>

@@ -1,12 +1,15 @@
 "use client";
 
 import { useTransform, motion, MotionValue } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface OverlayProps {
     scrollYProgress: MotionValue<number>;
 }
 
 export default function Overlay({ scrollYProgress }: OverlayProps) {
+    const { t } = useLanguage();
+
     const y1 = useTransform(scrollYProgress, [0, 0.25], [50, -50]);
     const opacity1 = useTransform(scrollYProgress, [0, 0.1, 0.25], [0, 1, 0]);
 
@@ -30,7 +33,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                         Soares
                     </h1>
                     <p className="text-base md:text-2xl mt-2 md:mt-4 text-blue-500 text-center">
-                        Desenvolvedor Web
+                        {t("overlay.role")}
                     </p>
                 </motion.div>
 
@@ -40,8 +43,8 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                     className="absolute left-6 md:left-20 max-w-[80vw] md:max-w-lg"
                 >
                     <h2 className="text-3xl md:text-7xl font-bold leading-tight text-white/90">
-                        Eu crio <br />
-                        <span className="text-green-600">experiências digitais.</span>
+                        {t("overlay.create")} <br />
+                        <span className="text-green-600">{t("overlay.experiences")}</span>
                     </h2>
                 </motion.div>
 
@@ -51,8 +54,8 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                     className="absolute right-6 md:right-20 text-right max-w-[80vw] md:max-w-lg"
                 >
                     <h2 className="text-3xl md:text-7xl font-bold leading-tight text-white/90">
-                        Unindo design <br />
-                        & <span className="text-purple-500">engenharia.</span>
+                        {t("overlay.uniting")} <br />
+                        <span className="text-purple-500">{t("overlay.engineering")}</span>
                     </h2>
                 </motion.div>
 
